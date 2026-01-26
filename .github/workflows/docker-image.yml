@@ -1,0 +1,24 @@
+name: Docker Image CI
+
+
+on:
+  push:
+    branches: [ "4E-Publish" ]
+  pull_request:
+    branches: [ "4E-Publish" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag 4epublish/4eplatform-frontapp-digialservicesmanagement:latest
+
+    - name: Push Image to Docker Hub
+      run: |
+        docker login -u 4epublish -p ${{ secrets.DOCKER_HUB_TOKEN }}
+        docker push 4epublish/4eplatform-frontapp-digialservicesmanagement:latest

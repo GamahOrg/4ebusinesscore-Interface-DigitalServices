@@ -1,0 +1,99 @@
+.stepper-content {
+  width: 95%;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  background-color: rgba(238, 238, 238, 0.411);
+  border-radius: 5px;
+}
+
+.stepper-item {
+  width: 100%;
+  min-height: 20px;
+  display: flex;
+  padding: 0 30px;
+  margin: 20px auto;
+}
+
+.stepper-item-header {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgb(2, 145, 228);
+  border: 2px solid;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.stepper-item-header i {
+  font-size: 14pt;
+  color: inherit;
+}
+
+.stepper-item-content {
+  width: 100%;
+  min-height: 10px;
+  border-radius: 5px;
+  margin: 0 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.stepper-line {
+  width: 4px;
+  height: calc(100% + 40px);
+  position: absolute;
+  z-index: 0;
+  padding-top: 30px;
+}
+
+/* Default: LTR */
+.stepper-line {
+  left: -31px;
+}
+
+/* RTL override */
+html[dir="rtl"] .stepper-line {
+  right: -31px;
+  left: auto;
+}
+
+.stepper-line .point,
+.stepper-line .line {
+  background-color: rgba(18, 152, 230, 0.712);
+  width: 4px;
+  height: 4px;
+  border-radius: 10px;
+  margin-bottom: 1px;
+}
+
+.stepper-line .line {
+  height: calc(100% - 35px);
+}
+
+.stepper-item-content .name {
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.stepper-item-content .label {
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.creation {
+  padding: 10px 10px 0 10px;
+  font-weight: bold;
+}
+
+.stepper-item-icon-creation {
+  color: black !important;
+}
